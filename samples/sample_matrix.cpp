@@ -6,13 +6,14 @@
 // Тестирование верхнетреугольной матрицы
 
 #include <iostream>
-#include "F:\Works\lab 2\mp2-lab2-matrix\include\utmatrix.h"
+#include "utmatrix.h"
 //---------------------------------------------------------------------------
 
 int main()
 {
   TMatrix<int> a(5), b(5), c(5);
   int i, j;
+
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование программ поддержки представления треугольных матриц"
     << endl;
