@@ -34,7 +34,6 @@ public:
   bool operator==(const TVector &v) const;  // сравнение
   bool operator!=(const TVector &v) const;  // сравнение
   TVector& operator=(const TVector &v);     // присваивание
-
   // скалярные операции
   TVector  operator+(const ValType &val);   // прибавить скаляр
   TVector  operator-(const ValType &val);   // вычесть скаляр
@@ -249,9 +248,7 @@ template <class ValType> // конструктор копирования
 TMatrix<ValType>::TMatrix(const TMatrix<ValType> &mt): TVector<TVector<ValType> >(mt)
 {
     for(int i = 0; i < this->Size; i++)
-    {
         this->pVector[i] = TVector<ValType>(mt.pVector[i]);;
-    }
 }
 
 template <class ValType> // конструктор преобразования типа
@@ -279,9 +276,7 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
         delete[] this->pVector;
         this->pVector = new TVector<ValType>[this->Size];
         for(int i = 0; i < this->Size; i++)
-        {
             this->pVector[i] = mt.pVector[i];
-        }
     }
     return *this;
 } /*-------------------------------------------------------------------------*/
@@ -289,7 +284,6 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
-
     if(this-> Size != mt.Size)
         throw -1;
     return TVector<TVector<ValType> >::operator+(mt);

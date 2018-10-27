@@ -1,4 +1,3 @@
-
 #include "utmatrix.h"
 
 #include <gtest/gtest.h>
